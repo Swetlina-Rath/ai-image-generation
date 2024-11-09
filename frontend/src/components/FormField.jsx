@@ -12,11 +12,12 @@ const FormField = ({labelName, type, name, placeholder, value, handleChange, isS
           <button
             type='button'
             onClick={handleSurpriseMe}
-            className='font-semibold text-xs bg-[#ECECF1] py-1 px-2 rounded-[5px] text-black'>
+            className='font-semibold text-xs bg-[#6a00ff] py-1 px-2 rounded-[5px] text-white shadow-2xl hover:scale-105'>
               Surprise Me!
             </button>
         )}
       </div>
+      
       <input 
       type={type}
       id={name}
@@ -26,9 +27,10 @@ const FormField = ({labelName, type, name, placeholder, value, handleChange, isS
       onChange={handleChange}
       required
       className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-      focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3'
+      focus:ring-[#4649ff] focus:border-[#4649ff] outline-none block w-full p-3 shadow-2xl'
       ></input>
-    </div>
+      </div>
+
   )
 }
 

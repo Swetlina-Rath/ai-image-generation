@@ -75,22 +75,24 @@ const CreatePost = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto">
-      <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px]">
+    <section className="max-w-7xl mx-auto mt-20 bg-[#f5ebe0] rounded-2xl shadow-2xl ">
+    <div className='w-full p-5'>
+      <form className=" w-full" onSubmit={handleSubmit}>
+        <div className="flex flex-col lg:flex-row w-full pt-10 gap-10">
+        <div className='flex flex-col gap-5 lg:w-[1200px] justify-between p-10'>
+
+        <h1 className="font-extrabold font-serif text-[#000000] md:text-[60px] text-[30px]">
           Generate Image
         </h1>
-        <p className="mt-2 text-[#666e75] text-[16px] max-w-[500px]">
-          Generate imaginative and visually stunning images through Hugging Face AI and share them with the community
+        <p className="mt-2 text-[#242c33] text-[16px] text-justify">
+        Transform your ideas into stunning visuals with powerful AI image generators at your fingertips. Watch as your words become beautiful images, perfectly suited for any project. Design with imagination and creativity, creating visuals that truly stand out. Share your unique creations with the community and inspire others.
         </p>
-      </div>
-      <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-5">
+      
           <FormField
             LabelName="Your name"
             type="text"
             name="name"
-            placeholder="John Doe"
+            placeholder="John Doe" 
             value={form.name}
             handleChange={handleChange}
           />
@@ -104,7 +106,8 @@ const CreatePost = () => {
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
           />
-          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
+          </div>
+          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full mr-5 h-full mt-19 flex shadow-xl justify-center items-center">
             {form.photo ? (
               <img src={form.photo} alt={form.prompt} className="w-full h-full object-contain" />
             ) : (
@@ -117,28 +120,34 @@ const CreatePost = () => {
               </div>
             )}
           </div>
+        
         </div>
-        <div className="mt-5 flex gap-5">
+        <div className='justify-self-center'>
+        <div className="mt-5 flex gap-5 justify-self-center">
           <button
             type="button"
             onClick={generateImg}
-            className="text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center hover:scale-105"
+            className="text-white bg-green-700 font-medium rounded-md text-sm w-full justify-self-center sm:w-auto px-5 py-2.5 text-center hover:scale-105"
           >
             {generatingImg ? 'Generating...' : 'Generate'}
           </button>
-        </div>
-        <div className="mt-10">
+        </div>  
+        <div className="mt-10 justify-self-center">
           <p className="mt-2 text-[#666e75] text-[14px]">
-            Once you have created the image you want, you can share it with others in the community
+            Once you have created the image you want, you can share it with others in the art exhibit.
           </p>
+          <div className='justify-self-center'>
           <button
             type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center hover:scale-105"
           >
             {loading ? 'Sharing...' : 'Share with the community'}
           </button>
+          </div>
+        </div>
         </div>
       </form>
+      </div>
     </section>
   );
 };
